@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+    Israel Alonso
+    COMP 105
+    Eric Gentry
+    Final Assignment 
+    12/10/2018
+-->
+<html>
+    <head>
+        <script src = "calc.js"></script>
+    </head>
+
+    <body>
+        <h1>Scientific Calculator</h1>
+        <table style = "table-layout: fixed; width: 350px; border: 100%;">
+            <!--This is where to put the numbers I click on-->
+            <tr>
+                <td colspan = "5">
+                    <input type = "number" id = "display" 
+                        style = "text-align:right; width: 130%;" 
+                        value = "0" step = "any">
+                </td>
+                <td>
+                    <button style = "width: 100%; margin-left: 180%;" onclick = "clearOut();">C</button>
+                </td>
+            </tr>
+            
+            <!-- Here is where I put the first row -->
+            <tr>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(1);">1</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(2);">2</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(3);">3</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "operate('+');">+</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "sine(); operate('sin');">sin</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "percent(); operate('%');">%</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "recipicate(); operate('1/x');">1/x</button>
+                </td>
+                <td rowspan = "4">
+                    <button style = "width: 100%; height: 100px;" onclick = "equals();">=</button>
+                </td>
+            </tr>
+            <!-- Here is where I put the second row -->
+            <tr>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(4);">4</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(5);">5</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(6);">6</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "operate('-');">-</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "cosine(); operate('cos')">cos</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "squrt(); operate('x^1/2');"> √</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "expoTen(); operate('10^x');">10^x</button>
+                </td>
+            </tr>
+
+            <!-- Here is where I put the third row -->
+            <tr>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(7);">7</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(8);">8</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(9);">9</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "operate('*');">*</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "tangent();">tan</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "square('x^2'); operate('x^2');">x^2</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "pie(); operate('PI');"> π</button>
+                </td>
+            </tr>
+
+            <!-- Here is where I put the fourth row -->
+            <tr>
+                <td>
+                    <button style = "width: 100%;" onclick = "neg(); operate('minus');">-</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "input(0);">0</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "decimal();">.</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "operate('÷');">÷</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "xexclamation(); operate('x!');">x!</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "operate('x^y');">x^y</button>
+                </td>
+                <td>
+                    <button style = "width: 100%;" onclick = "random(); operate('rand');">Rand</button>
+                </td>
+            </tr>
+        </table>
+        
+        <!--This is where the calculations are being recorded-->
+        <textarea 
+            type = "number" id = "paperTape"
+            cols = "20" rows = "20" 
+            style = "margin-left: 45%; margin-top: -15%;">
+        </textarea>
+        <br>
+        <!--By clicking this, it will clear whatever is recorded-->
+        <button onclick = "paperClear();" 
+            style = "margin-left: 45%;
+                margin-top: -15%">Clear
+        </button>
+    </body>
+</html>
